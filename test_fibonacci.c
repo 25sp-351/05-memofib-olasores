@@ -27,11 +27,11 @@ void test_caching() {
 }
 
 int main() {
-    // Setup providers
     original_provider = fibonacci;
     fibonacci_provider = cache;
     
-    // Run tests
+
+    // run test cases 
     test_basic_cases();
     test_larger_numbers();
     test_caching();

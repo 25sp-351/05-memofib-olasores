@@ -7,7 +7,6 @@
 #define CACHE_SIZE 1000
 #define NOT_PRESENT -1
 
-// Global variables
 long results[CACHE_SIZE] = {[0 ... CACHE_SIZE-1] = NOT_PRESENT};
 long_func_ptr fibonacci_provider = NULL;
 long_func_ptr original_provider = NULL;
