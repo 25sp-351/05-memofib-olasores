@@ -1,23 +1,10 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -g
-LDFLAGS =
+CFLAGS = -Wall -Wextra
 
-SRCS = fibonacci.c test_fibonacci.c
-OBJS = $(SRCS:.c=.o)
-TARGET = test_fibonacci
+all: fib_test
 
-.PHONY: all clean test
-
-all: $(TARGET)
-
-$(TARGET): $(OBJS)
-	$(CC) $(OBJS) -o $(TARGET) $(LDFLAGS)
-
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+fib_test: main.c fibonacci.c cache.c
+	$(CC) $(CFLAGS) -o fib_test main.c fibonacci.c cache.c
 
 clean:
-	rm -f $(OBJS) $(TARGET)
-
-test: $(TARGET)
-	./test.sh
+	rm -f fib_test
